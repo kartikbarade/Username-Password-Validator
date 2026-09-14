@@ -1,4 +1,10 @@
 /* ==========================================
+   USERNAME & PASSWORD VALIDATOR
+   BLACK & WHITE THEME
+========================================== */
+
+
+/* ==========================================
    RESET
 ========================================== */
 
@@ -32,9 +38,10 @@ body {
 
 .container {
     width: 100%;
+
     max-width: 850px;
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 
@@ -49,16 +56,21 @@ body {
 }
 
 
-/* Logo */
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo {
     width: 75px;
+
     height: 75px;
 
     margin: 0 auto 20px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 35px;
@@ -69,29 +81,34 @@ body {
 
     color: #ffffff;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 
-/* Title */
+/* ==========================================
+   HEADER TITLE
+========================================== */
 
 .header h1 {
     font-size: 34px;
 
-    margin-bottom: 10px;
+    font-weight: 700;
 
     color: #111111;
 
-    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 
-/* Subtitle */
+/* ==========================================
+   HEADER DESCRIPTION
+========================================== */
 
 .header p {
-    color: #666666;
-
     font-size: 16px;
+
+    color: #666666;
 }
 
 
@@ -101,7 +118,6 @@ body {
 
 .card,
 .result-card {
-
     background: #ffffff;
 
     border: 1px solid #dddddd;
@@ -110,10 +126,10 @@ body {
 
     padding: 30px;
 
+    margin-bottom: 25px;
+
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.08);
-
-    margin-bottom: 25px;
 }
 
 
@@ -126,20 +142,26 @@ body {
 }
 
 
+/* ==========================================
+   LABEL
+========================================== */
+
 .input-group label {
     display: block;
+
+    margin-bottom: 10px;
 
     font-size: 16px;
 
     font-weight: 700;
 
-    margin-bottom: 10px;
-
     color: #111111;
 }
 
 
-/* Input */
+/* ==========================================
+   INPUT
+========================================== */
 
 .input-group input {
     width: 100%;
@@ -158,9 +180,13 @@ body {
 
     outline: none;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
 
 .input-group input:focus {
     border-color: #111111;
@@ -172,26 +198,32 @@ body {
 }
 
 
+/* ==========================================
+   INPUT PLACEHOLDER
+========================================== */
+
 .input-group input::placeholder {
     color: #999999;
 }
 
 
-/* Small information */
+/* ==========================================
+   INPUT INFORMATION
+========================================== */
 
 .input-group small {
     display: block;
 
-    color: #777777;
-
     margin-top: 8px;
 
     font-size: 13px;
+
+    color: #777777;
 }
 
 
 /* ==========================================
-   BUTTON
+   VALIDATE BUTTON
 ========================================== */
 
 button {
@@ -213,9 +245,13 @@ button {
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
+
+/* ==========================================
+   BUTTON HOVER
+========================================== */
 
 button:hover {
     background: #ffffff;
@@ -230,6 +266,15 @@ button:hover {
 
 
 /* ==========================================
+   BUTTON ACTIVE
+========================================== */
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
    RESULT CARD
 ========================================== */
 
@@ -237,8 +282,14 @@ button:hover {
     margin-bottom: 25px;
 
     color: #111111;
+
+    font-size: 24px;
 }
 
+
+/* ==========================================
+   RESULT SECTION
+========================================== */
 
 .result-section {
     padding: 20px 0;
@@ -250,43 +301,45 @@ button:hover {
 .result-section h3 {
     margin-bottom: 15px;
 
+    font-size: 18px;
+
     color: #111111;
 }
 
 
 /* ==========================================
-   SUCCESS
+   SUCCESS ALERT - GREEN
 ========================================== */
 
 .success {
-    padding: 14px;
+    padding: 14px 16px;
 
     border-radius: 10px;
 
-    background: #f0f0f0;
+    background: #ecfdf3;
 
-    color: #111111;
+    color: #15803d;
 
-    border: 1px solid #cccccc;
+    border: 1px solid #86efac;
 
     font-weight: 600;
 }
 
 
 /* ==========================================
-   ERROR
+   ERROR ALERT - RED
 ========================================== */
 
 .error {
-    padding: 14px;
+    padding: 14px 16px;
 
     border-radius: 10px;
 
-    background: #111111;
+    background: #fef2f2;
 
-    color: #ffffff;
+    color: #dc2626;
 
-    border: 1px solid #111111;
+    border: 1px solid #fca5a5;
 
     font-weight: 600;
 }
@@ -299,14 +352,16 @@ button:hover {
 .error-list {
     margin-top: 12px;
 
-    padding-left: 20px;
+    padding-left: 22px;
 
-    color: #555555;
+    color: #dc2626;
+
+    font-size: 14px;
 }
 
 
 .error-list li {
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
 
 
@@ -315,56 +370,52 @@ button:hover {
 ========================================== */
 
 .strength {
-
     padding: 15px;
 
     border-radius: 10px;
 
     margin-bottom: 20px;
 
-    background: #f5f5f5;
-
-    color: #111111;
-
-    border: 1px solid #dddddd;
+    font-weight: 600;
 }
 
 
-.strength strong {
-    margin-left: 5px;
-}
-
-
-/* Strong */
+/* ==========================================
+   STRONG PASSWORD
+========================================== */
 
 .strength.strong {
-    background: #111111;
+    background: #ecfdf3;
 
-    color: #ffffff;
+    color: #15803d;
 
-    border-color: #111111;
+    border: 1px solid #86efac;
 }
 
 
-/* Medium */
+/* ==========================================
+   MEDIUM PASSWORD
+========================================== */
 
 .strength.medium {
-    background: #e8e8e8;
+    background: #fffbeb;
 
-    color: #111111;
+    color: #b45309;
 
-    border-color: #bbbbbb;
+    border: 1px solid #fcd34d;
 }
 
 
-/* Weak */
+/* ==========================================
+   WEAK PASSWORD
+========================================== */
 
 .strength.weak {
-    background: #f5f5f5;
+    background: #fef2f2;
 
-    color: #555555;
+    color: #dc2626;
 
-    border-color: #cccccc;
+    border: 1px solid #fca5a5;
 }
 
 
@@ -381,7 +432,14 @@ button:hover {
 }
 
 
+/* ==========================================
+   CHECK ITEM
+========================================== */
+
 .check-item {
+    display: flex;
+
+    align-items: center;
 
     padding: 13px;
 
@@ -392,43 +450,57 @@ button:hover {
     border: 1px solid #e0e0e0;
 
     color: #333333;
+
+    font-size: 14px;
 }
 
 
-/* Check Circle */
+/* ==========================================
+   CHECK CIRCLE
+========================================== */
 
 .check {
     display: inline-flex;
 
-    width: 24px;
-    height: 24px;
+    flex-shrink: 0;
+
+    width: 25px;
+
+    height: 25px;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    margin-right: 8px;
+    margin-right: 9px;
+
+    font-size: 13px;
 
     font-weight: bold;
 }
 
 
-/* Valid */
+/* ==========================================
+   VALID CHECK - GREEN
+========================================== */
 
 .check.valid {
-    background: #111111;
+    background: #16a34a;
 
     color: #ffffff;
 }
 
 
-/* Invalid */
+/* ==========================================
+   INVALID CHECK - RED
+========================================== */
 
 .check.invalid {
-    background: #e5e5e5;
+    background: #dc2626;
 
-    color: #111111;
+    color: #ffffff;
 }
 
 
@@ -437,27 +509,36 @@ button:hover {
 ========================================== */
 
 .error-box {
-
     margin-top: 20px;
 
     padding: 18px;
 
     border-radius: 12px;
 
-    background: #f5f5f5;
+    background: #fef2f2;
 
-    border: 1px solid #cccccc;
+    border: 1px solid #fca5a5;
 
-    color: #333333;
+    color: #dc2626;
 }
 
+
+/* ==========================================
+   ERROR BOX TITLE
+========================================== */
 
 .error-box h4 {
     margin-bottom: 10px;
 
-    color: #111111;
+    color: #b91c1c;
+
+    font-size: 15px;
 }
 
+
+/* ==========================================
+   ERROR BOX LIST
+========================================== */
 
 .error-box ul {
     padding-left: 20px;
@@ -465,7 +546,9 @@ button:hover {
 
 
 .error-box li {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+
+    font-size: 14px;
 }
 
 
@@ -474,45 +557,49 @@ button:hover {
 ========================================== */
 
 .final-result {
-
     margin-top: 20px;
 
     text-align: center;
 }
 
 
-.final-success,
-.final-error {
+/* ==========================================
+   FINAL SUCCESS
+========================================== */
 
+.final-success {
     padding: 25px;
 
     border-radius: 15px;
+
+    background: #ecfdf3;
+
+    border: 1px solid #86efac;
+
+    color: #15803d;
 }
 
 
-/* Success */
-
-.final-success {
-
-    background: #111111;
-
-    border: 1px solid #111111;
-
-    color: #ffffff;
-}
-
-
-/* Error */
+/* ==========================================
+   FINAL ERROR
+========================================== */
 
 .final-error {
+    padding: 25px;
 
-    background: #f1f1f1;
+    border-radius: 15px;
 
-    border: 1px solid #cccccc;
+    background: #fef2f2;
 
-    color: #111111;
+    border: 1px solid #fca5a5;
+
+    color: #dc2626;
 }
 
+
+/* ==========================================
+   FINAL RESULT HEADING
+========================================== */
 
 .final-result h2 {
     margin: 10px 0;
@@ -521,13 +608,24 @@ button:hover {
 }
 
 
+/* ==========================================
+   FINAL RESULT TEXT
+========================================== */
+
 .final-result p {
-    color: #777777;
+    color: #666666;
+
+    font-size: 14px;
 }
 
 
 .final-success p {
-    color: #dddddd;
+    color: #4b5563;
+}
+
+
+.final-error p {
+    color: #666666;
 }
 
 
@@ -552,7 +650,22 @@ footer strong {
 
 
 /* ==========================================
-   RESPONSIVE
+   CARD HOVER
+========================================== */
+
+.card {
+    transition: all 0.3s ease;
+}
+
+
+.card:hover {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
 ========================================== */
 
 @media (max-width: 600px) {
@@ -561,16 +674,63 @@ footer strong {
         padding: 25px 15px;
     }
 
+
     .header h1 {
         font-size: 26px;
     }
+
+
+    .header p {
+        font-size: 14px;
+    }
+
 
     .card,
     .result-card {
         padding: 20px;
     }
 
+
     .checks {
         grid-template-columns: 1fr;
+    }
+
+
+    .logo {
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 30px;
+    }
+}
+
+
+/* ==========================================
+   VERY SMALL SCREEN
+========================================== */
+
+@media (max-width: 400px) {
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+
+    .card,
+    .result-card {
+        padding: 16px;
+    }
+
+
+    .input-group input {
+        padding: 13px;
+    }
+
+
+    button {
+        padding: 14px;
+
+        font-size: 14px;
     }
 }
