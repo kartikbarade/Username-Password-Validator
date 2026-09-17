@@ -13,10 +13,6 @@ def home():
         username = request.form["username"]
         password = request.form["password"]
 
-        # ==========================================
-        # USERNAME VALIDATION
-        # ==========================================
-
         username_errors = []
 
         if len(username) < 5:
@@ -30,10 +26,7 @@ def home():
             )
 
         username_valid = len(username_errors) == 0
-
-        # ==========================================
-        # PASSWORD VALIDATION
-        # ==========================================
+=
 
         password_errors = []
 
@@ -99,10 +92,6 @@ def home():
 
         password_valid = len(password_errors) == 0
 
-        # ==========================================
-        # PASSWORD STRENGTH
-        # ==========================================
-
         score = 0
 
         if len(password) >= 8:
@@ -126,11 +115,6 @@ def home():
             strength = "MEDIUM"
         else:
             strength = "WEAK"
-
-        # ==========================================
-        # RESULT
-        # ==========================================
-
         result = {
             "username": username,
             "username_valid": username_valid,

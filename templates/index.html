@@ -1,58 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Username & Password Validator</title>
-    <link
-        rel="icon"
-        type="image/png"
-        href="{{ url_for('static', filename='favicon.png') }}"
-    >
 
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
-
     <div class="container">
-
-        <!-- ==========================================
-             HEADER
-        =========================================== -->
-
         <div class="header">
-
-            <div class="logo">
-                🔐
-            </div>
+            <div class="logo">🔐</div>
 
             <h1>Username & Password Validator</h1>
-
-            <p>
-                Check your username and password security
-            </p>
-
+            <p>Check your username and password security</p>
         </div>
 
-
-        <!-- ==========================================
-             VALIDATION FORM
-        =========================================== -->
-
         <div class="card">
-
             <form method="POST">
-
-                <!-- Username -->
-
                 <div class="input-group">
-
-                    <label for="username">
-                        Username
-                    </label>
+                    <label for="username">Username</label>
 
                     <input
                         type="text"
@@ -65,17 +35,10 @@
                     <small>
                         Minimum 5 characters • Letters & numbers only
                     </small>
-
                 </div>
 
-
-                <!-- Password -->
-
                 <div class="input-group">
-
-                    <label for="password">
-                        Password
-                    </label>
+                    <label for="password">Password</label>
 
                     <input
                         type="password"
@@ -89,75 +52,38 @@
                         Minimum 8 characters with uppercase,
                         lowercase, digit & special character
                     </small>
-
                 </div>
 
-
-                <!-- Submit -->
-
-                <button type="submit">
-                    🔍 Validate Credentials
-                </button>
-
+                <button type="submit">🔍 Validate Credentials</button>
             </form>
-
         </div>
 
-
-        <!-- ==========================================
-             RESULT
-        =========================================== -->
-
         {% if result %}
-
         <div class="result-card">
-
             <h2>Validation Result</h2>
 
-
-            <!-- Username Result -->
-
             <div class="result-section">
-
                 <h3>👤 Username</h3>
 
                 {% if result.username_valid %}
-
                     <div class="success">
                         ✓ Username is valid
                     </div>
-
                 {% else %}
-
                     <div class="error">
                         ✕ Username is invalid
                     </div>
 
                     <ul class="error-list">
-
                         {% for error in result.username_errors %}
-
-                        <li>
-                            {{ error }}
-                        </li>
-
+                            <li>{{ error }}</li>
                         {% endfor %}
-
                     </ul>
-
                 {% endif %}
-
             </div>
 
-
-            <!-- Password Result -->
-
             <div class="result-section">
-
                 <h3>🔑 Password</h3>
-
-
-                <!-- Password Strength -->
 
                 <div class="strength
                     {% if result.strength == 'STRONG' %}
@@ -168,173 +94,93 @@
                         weak
                     {% endif %}
                 ">
-
                     Password Strength:
-                    <strong>
-                        {{ result.strength }}
-                    </strong>
-
+                    <strong>{{ result.strength }}</strong>
                 </div>
 
-
-                <!-- Password Checks -->
-
                 <div class="checks">
-
                     <div class="check-item">
-
                         {% if result.checks.length %}
                             <span class="check valid">✓</span>
                         {% else %}
                             <span class="check invalid">✕</span>
                         {% endif %}
-
                         Minimum 8 characters
-
                     </div>
 
-
                     <div class="check-item">
-
                         {% if result.checks.uppercase %}
                             <span class="check valid">✓</span>
                         {% else %}
                             <span class="check invalid">✕</span>
                         {% endif %}
-
                         Uppercase letter
-
                     </div>
 
-
                     <div class="check-item">
-
                         {% if result.checks.lowercase %}
                             <span class="check valid">✓</span>
                         {% else %}
                             <span class="check invalid">✕</span>
                         {% endif %}
-
                         Lowercase letter
-
                     </div>
 
-
                     <div class="check-item">
-
                         {% if result.checks.digit %}
                             <span class="check valid">✓</span>
                         {% else %}
                             <span class="check invalid">✕</span>
                         {% endif %}
-
                         Digit
-
                     </div>
 
-
                     <div class="check-item">
-
                         {% if result.checks.special %}
                             <span class="check valid">✓</span>
                         {% else %}
                             <span class="check invalid">✕</span>
                         {% endif %}
-
                         Special character
-
                     </div>
-
                 </div>
 
-
-                <!-- Password Errors -->
-
                 {% if result.password_errors %}
-
                 <div class="error-box">
-
                     <h4>⚠ Requirements not satisfied</h4>
 
                     <ul>
-
                         {% for error in result.password_errors %}
-
-                        <li>
-                            {{ error }}
-                        </li>
-
+                            <li>{{ error }}</li>
                         {% endfor %}
-
                     </ul>
-
                 </div>
-
                 {% endif %}
-
             </div>
-
-
-            <!-- Final Result -->
 
             <div class="final-result">
-
                 {% if result.username_valid and result.password_valid %}
-
                     <div class="final-success">
-
                         🎉
-
-                        <h2>
-                            All Requirements Satisfied!
-                        </h2>
-
-                        <p>
-                            Your username and password are valid.
-                        </p>
-
+                        <h2>All Requirements Satisfied!</h2>
+                        <p>Your username and password are valid.</p>
                     </div>
-
                 {% else %}
-
                     <div class="final-error">
-
                         ⚠️
-
-                        <h2>
-                            Validation Failed
-                        </h2>
-
-                        <p>
-                            Please fix the requirements above.
-                        </p>
-
+                        <h2>Validation Failed</h2>
+                        <p>Please fix the requirements above.</p>
                     </div>
-
                 {% endif %}
-
             </div>
-
         </div>
-
         {% endif %}
 
-
-        <!-- ==========================================
-             FOOTER
-        =========================================== -->
-
         <footer>
-
             <p>
-                Built with
-                <strong>Python + Flask + HTML + CSS</strong>
+                Built with <strong>Python + Flask + HTML + CSS</strong>
             </p>
-
         </footer>
-
     </div>
-
 </body>
-
 </html>
