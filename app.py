@@ -26,7 +26,6 @@ def home():
             )
 
         username_valid = len(username_errors) == 0
-=
 
         password_errors = []
 
