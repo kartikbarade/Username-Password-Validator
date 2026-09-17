@@ -241,12 +241,12 @@ button:active {
     border-radius: 12px;
     background: #fef2f2;
     border: 1px solid #fca5a5;
-    color: #dc2626;
+    color: #d30c0c;
 }
 
 .error-box h4 {
     margin-bottom: 10px;
-    color: #b91c1c;
+    color: #ff0000;
     font-size: 15px;
 }
 
@@ -277,7 +277,7 @@ button:active {
     border-radius: 15px;
     background: #fef2f2;
     border: 1px solid #fca5a5;
-    color: #dc2626;
+    color: #cd1010;
 }
 
 .final-result h2 {
